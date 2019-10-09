@@ -1,2 +1,2 @@
-# RickyAndMorty
+# RickAndMorty
 displays list of ricky and morty characters
