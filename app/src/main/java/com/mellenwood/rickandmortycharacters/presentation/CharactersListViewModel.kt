@@ -10,7 +10,6 @@ import kotlinx.coroutines.*
 
 class CharactersListViewModel(private val repository: CharactersRepository) : ViewModel() {
 
-    private val apiService = CharactersApiImpl().makeGithubTrendingService(true)
     var characters = MutableLiveData<List<CharacterModel>>()
 
     fun loadCharacters() {
