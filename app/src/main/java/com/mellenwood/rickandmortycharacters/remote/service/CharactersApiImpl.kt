@@ -8,7 +8,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
-class CharactersApiImpl() {
+class CharactersApiImpl {
 
     fun makeGithubTrendingService(isDebug: Boolean): CharactersApiService {
         val okHttpClient = makeOkHttpClient(

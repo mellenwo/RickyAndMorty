@@ -20,6 +20,15 @@ class CharacterDetailFragment : Fragment() {
     private var characterName: String? = null
     private var characterImg: String? = null
 
+    companion object {
+        /**
+         * The fragment argument representing the item ID that this fragment
+         * represents.
+         */
+        const val ARG_CHARACTER_NAME = "character_name"
+        const val ARG_CHARACTER_IMAGE = "character_image"
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -50,14 +59,5 @@ class CharacterDetailFragment : Fragment() {
         }
 
         return rootView
-    }
-
-    companion object {
-        /**
-         * The fragment argument representing the item ID that this fragment
-         * represents.
-         */
-        const val ARG_CHARACTER_NAME = "character_name"
-        const val ARG_CHARACTER_IMAGE = "character_image"
     }
 }

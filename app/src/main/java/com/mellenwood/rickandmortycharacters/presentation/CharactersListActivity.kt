@@ -11,9 +11,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.lifecycle.Observer
 import com.bumptech.glide.Glide
-import com.mellenwood.rickandmortycharacters.CharacterDetailActivity
-import com.mellenwood.rickandmortycharacters.CharacterDetailFragment
-import com.mellenwood.rickandmortycharacters.R
+import com.mellenwood.rickandmortycharacters.*
 
 import com.mellenwood.rickandmortycharacters.remote.model.CharacterModel
 import kotlinx.android.synthetic.main.activity_item_list.*
@@ -34,7 +32,7 @@ class CharactersListActivity : AppCompatActivity() {
      * Whether or not the activity is in two-pane mode, i.e. running on a tablet
      * device.
      */
-    private val viewModel = CharactersListViewModel()
+    private lateinit var viewModel : CharactersListViewModel
     private val adapter = SimpleItemRecyclerViewAdapter(
         this,
         arrayListOf()
@@ -44,8 +42,12 @@ class CharactersListActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_item_list)
 
+        val appContainer = (application as CharactersApplication).appContainer
+        viewModel = appContainer.viewModel
+
         setSupportActionBar(toolbar)
         toolbar.title = title
+
 
         progressBar.visibility = View.VISIBLE
         viewModel.loadCharacters()
